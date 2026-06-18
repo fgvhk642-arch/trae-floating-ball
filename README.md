@@ -49,8 +49,21 @@ python main.py
 
 ```
 trae-floating-ball/
-├── main.py                 # 主程序入口
-├── requirements.txt        # 依赖列表
+├── main.py                 # 主程序入口（桌面应用）
+├── requirements.txt        # Python依赖列表
+│
+├── web-demo/               # 🌐 网页演示版本
+│   ├── index.html          # 主页面入口
+│   ├── chat.html           # 聊天界面
+│   ├── chat-window.html    # 聊天窗口组件
+│   ├── float-ball.html     # 悬浮球组件
+│   ├── floating.html       # 悬浮功能页面
+│   ├── style.css           # 样式文件
+│   ├── styles.css          # 补充样式
+│   ├── main.js             # 主要交互逻辑
+│   ├── script.js           # 辅助脚本
+│   └── package.json        # Node.js配置（可选）
+│
 ├── config/
 │   └── settings.py         # 默认配置
 ├── modules/
@@ -64,6 +77,33 @@ trae-floating-ball/
     ├── common.py           # 通用工具函数
     └── config_manager.py   # 配置管理器
 ```
+
+## 双版本架构
+
+本项目提供**两个版本**，满足不同使用场景：
+
+### 💻 桌面应用版本（主要）
+- **位置**: 项目根目录的Python文件
+- **运行方式**: `python main.py`
+- **特点**:
+  - 完整功能实现
+  - 系统级集成（悬浮球、截图、剪贴板）
+  - 本地配置持久化
+  - 适合日常使用和开发
+
+### 🌐 网页演示版本（展示）
+- **位置**: `web-demo/` 文件夹
+- **运行方式**: 直接在浏览器打开 `index.html`
+- **特点**:
+  - 无需安装Python环境
+  - 快速预览界面设计
+  - 适合演示和分享
+  - 轻量级交互体验
+
+### 📝 如何选择？
+- **开发和使用**: 使用桌面应用版本
+- **快速演示/分享**: 使用网页演示版本
+- **创意大赛展示**: 推荐同时展示两个版本
 
 ## AI服务配置
 
