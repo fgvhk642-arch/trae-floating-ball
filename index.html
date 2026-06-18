@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trae 悬浮球</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="floating-ball" id="floatingBall">
+        <div class="ball-inner">
+            <span class="ball-icon">T</span>
+        </div>
+        <div class="ball-pulse"></div>
+    </div>
+
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <div class="header-left">
+                <div class="logo">T</div>
+                <span class="title">Trae</span>
+            </div>
+            <div class="header-actions">
+                <button class="tool-btn" id="screenshotBtn" title="一键截图">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                        <polyline points="21 15 16 10 5 21"></polyline>
+                    </svg>
+                </button>
+                <button class="tool-btn" id="minimizeBtn" title="最小化">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="6" y1="12" x2="18" y2="12"></line>
+                    </svg>
+                </button>
+                <button class="tool-btn" id="closeBtn" title="关闭">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="avatar">T</div>
+                <div class="message-content">
+                    <p>你好！我是 Trae，有什么我可以帮助你的吗？</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chat-input-area">
+            <textarea 
+                id="messageInput" 
+                placeholder="输入消息..." 
+                rows="2"
+            ></textarea>
+            <div class="input-actions">
+                <button class="send-btn" id="sendBtn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="22" y1="2" x2="11" y2="13"></line>
+                        <polygon points="22 2 15 22 11 13 2 9"></polygon>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="screenshot-overlay" id="screenshotOverlay" style="display: none;">
+        <div class="screenshot-area" id="screenshotArea">
+            <div class="screenshot-hint">拖动鼠标选择区域，双击确认截图</div>
+        </div>
+        <div class="screenshot-toolbar">
+            <button class="screenshot-btn confirm-btn" id="confirmScreenshot">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span>确认</span>
+            </button>
+            <button class="screenshot-btn cancel-btn" id="cancelScreenshot">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+                <span>取消</span>
+            </button>
+        </div>
+    </div>
+
+    <canvas id="screenshotCanvas" style="display: none;"></canvas>
+
+    <script src="script.js"></script>
+</body>
+</html>
